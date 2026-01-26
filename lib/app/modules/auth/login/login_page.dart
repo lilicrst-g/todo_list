@@ -15,51 +15,52 @@ class LoginPage extends StatelessWidget {
             child: ConstrainedBox(
               constraints: BoxConstraints(
                 minHeight: constraints.maxHeight,
-                minWidth: constraints.maxWidth
+                minWidth: constraints.maxWidth,
               ),
               child: IntrinsicHeight(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SizedBox(height: 45,),
+                    SizedBox(height: 45),
                     TodoListLogo(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                        child: Form(
-                          child: Column(
-                            children: [
-                              TodoListField(label: 'E-mail',),
-                              SizedBox(height: 20,),
-                              TodoListField(label: 'Senha', obscureText: true,),
-                              SizedBox(height: 10,),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TextButton(
-                                    onPressed: (){}, 
-                                    child: Text('Esqueceu sua senha?'),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 20,
+                      ),
+                      child: Form(
+                        child: Column(
+                          children: [
+                            TodoListField(label: 'E-mail'),
+                            SizedBox(height: 20),
+                            TodoListField(label: 'Senha', obscureText: true),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                TextButton(
+                                  onPressed: () {},
+                                  child: Text('Esqueceu sua senha?'),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
                                   ),
-                                  ElevatedButton(
-                                    onPressed: (){}, 
-                                    style: ElevatedButton.styleFrom(
-                                      shape: RoundedRectangleBorder(borderRadius:
-                                        BorderRadius.circular(20),
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text('Login'),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text('Login'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    SizedBox(height: 20),
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
@@ -73,25 +74,28 @@ class LoginPage extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            SizedBox(
-                              height: 30,
-                            ),
+                            SizedBox(height: 30),
                             SignInButton(
                               Buttons.Google,
                               text: 'Continue com o Google',
-                              padding: const EdgeInsets.all(5), 
+                              padding: const EdgeInsets.all(5),
                               shape: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                                 borderSide: BorderSide.none,
                               ),
-                              onPressed: (){},
+                              onPressed: () {},
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('Não tem conta?'),
-                                TextButton(onPressed: (){}, 
-                                child: Text('Cadastre-se'),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(
+                                      context
+                                    ).pushNamed('/register');
+                                  },
+                                  child: Text('Cadastre-se'),
                                 ),
                               ],
                             ),
@@ -99,7 +103,6 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
               ),

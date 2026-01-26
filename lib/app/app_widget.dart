@@ -17,12 +17,12 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance?.addObserver(sqliteAdmConnection);
+    WidgetsBinding.instance.addObserver(sqliteAdmConnection);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(sqliteAdmConnection);
+    WidgetsBinding.instance.removeObserver(sqliteAdmConnection);
     super.dispose();
   }
 

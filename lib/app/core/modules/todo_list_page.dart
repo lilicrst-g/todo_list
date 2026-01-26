@@ -6,13 +6,12 @@ class TodoListPage extends StatelessWidget {
   final List<SingleChildWidget>? _bindings;
   final WidgetBuilder _page;
 
-  TodoListPage({
-    Key? key,
+  const TodoListPage({
+    super.key,
     List<SingleChildWidget>? bindings,
     required WidgetBuilder page,
   }) : _bindings = bindings,
-       _page = page,
-       super(key: key);
+       _page = page;
 
   @override
   Widget build(BuildContext context) {
