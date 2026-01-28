@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'todo-list-provider-b1612',
     storageBucket: 'todo-list-provider-b1612.firebasestorage.app',
   );
+
 }
